@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shaik Thanveer - Resume</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* PDF Page Setup */
+        @page {
+            size: A4;
+            margin: 12mm 15mm;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            color: #1e293b;
+            background-color: #f1f5f9;
+            line-height: 1.45;
+            font-size: 9.5pt;
+            padding: 30px 15px;
+        }
+
+        .resume-page {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 35px 45px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+            border-radius: 4px;
+        }
+
+        /* Floating Download Action Button */
+        .action-bar {
+            max-width: 800px;
+            margin: 0 auto 20px auto;
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .download-btn {
+            background-color: #0284c7;
+            color: #ffffff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 13px;
+            font-weight: 600;
+            border-radius: 6px;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 4px 12px rgba(2, 132, 199, 0.25);
+            transition: background 0.2s ease, transform 0.1s ease;
+        }
+
+        .download-btn:hover {
+            background-color: #0369a1;
+            transform: translateY(-1px);
+        }
+
+        .download-btn svg {
+            width: 16px;
+            height: 16px;
+            fill: currentColor;
+        }
+
+        /* Header */
+        header {
+            text-align: center;
+            border-bottom: 2px solid #0f172a;
+            padding-bottom: 10px;
+            margin-bottom: 12px;
+        }
+
+        h1 {
+            font-size: 20pt;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            color: #0f172a;
+            text-transform: uppercase;
+        }
+
+        .subtitle {
+            font-size: 10.5pt;
+            font-weight: 600;
+            color: #0284c7;
+            margin-top: 2px;
+            margin-bottom: 6px;
+        }
+
+        .contact-bar {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 12px;
+            font-size: 8.5pt;
+            color: #475569;
+        }
+
+        .contact-bar a {
+            color: #0284c7;
+            text-decoration: none;
+        }
+
+        /* Section Headings */
+        section {
+            margin-bottom: 11px;
+        }
+
+        h2 {
+            font-size: 10pt;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: #0f172a;
+            border-bottom: 1px solid #cbd5e1;
+            padding-bottom: 3px;
+            margin-bottom: 6px;
+        }
+
+        p {
+            color: #334155;
+            text-align: justify;
+        }
+
+        /* Skills */
+        .skills-list {
+            list-style: none;
+        }
+
+        .skills-list li {
+            margin-bottom: 3px;
+        }
+
+        .skills-list strong {
+            color: #0f172a;
+            font-weight: 600;
+        }
+
+        /* Experience & Projects */
+        .item {
+            margin-bottom: 8px;
+        }
+
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 2px;
+        }
+
+        .item-title {
+            font-weight: 700;
+            color: #0f172a;
+            font-size: 9.5pt;
+        }
+
+        .item-title span {
+            font-weight: 400;
+            color: #475569;
+        }
+
+        .item-date {
+            font-size: 8.5pt;
+            color: #64748b;
+            font-weight: 500;
+        }
+
+        .item-sub {
+            font-size: 8.5pt;
+            font-weight: 600;
+            color: #0284c7;
+            margin-bottom: 3px;
+        }
+
+        ul.bullets {
+            list-style-type: square;
+            padding-left: 16px;
+            color: #334155;
+        }
+
+        ul.bullets li {
+            margin-bottom: 2px;
+            padding-left: 2px;
+        }
+
+        /* Education Layout */
+        .edu-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        /* Print Override: Strips buttons and margins for PDF output */
+        @media print {
+            body {
+                background: none;
+                padding: 0;
+            }
+            .action-bar {
+                display: none !important;
+            }
+            .resume-page {
+                box-shadow: none;
+                padding: 0;
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Download Trigger Button -->
+<div class="action-bar">
+    <button class="download-btn" onclick="window.print()">
+        <svg viewBox="0 0 24 24">
+            <path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/>
+        </svg>
+        Download as PDF
+    </button>
+</div>
+
+<div class="resume-page">
+    <header>
+        <h1>Shaik Thanveer</h1>
+        <div class="subtitle">Python &amp; Backend Developer</div>
+        <div class="contact-bar">
+            <span>Tirupati, AP, India</span>
+            <span>&bull;</span>
+            <span>+91 80748 85400</span>
+            <span>&bull;</span>
+            <a href="mailto:thannuthannu0141@gmail.com">thannuthannu0141@gmail.com</a>
+            <span>&bull;</span>
+            <a href="https://linkedin.com/in/shaik-thanveer-639053241" target="_blank">LinkedIn</a>
+            <span>&bull;</span>
+            <a href="https://github.com/THANVEER-cyber" target="_blank">GitHub</a>
+        </div>
+    </header>
+
+    <!-- Professional Summary -->
+    <section>
+        <h2>Professional Summary</h2>
+        <p>
+            MCA graduate with practical experience in Python, SQL, and web frameworks (Flask, Django), combined with professional industry experience in data annotation and quality control. Adept at developing functional web applications, writing clean relational database queries, and handling dataset verification with high precision. Seeking entry-level opportunities in Python backend engineering and software development.
+        </p>
+    </section>
+
+    <!-- Technical Skills -->
+    <section>
+        <h2>Technical Skills</h2>
+        <ul class="skills-list">
+            <li><strong>Programming Languages:</strong> Python (Core, OOP), SQL, JavaScript, HTML5, CSS3</li>
+            <li><strong>Web Frameworks:</strong> Flask, Django</li>
+            <li><strong>Databases &amp; Tools:</strong> SQLite, Git, GitHub, MS Excel</li>
+            <li><strong>Core Competencies:</strong> Data Annotation &amp; Labeling, Data Quality Assurance, Web Development</li>
+        </ul>
+    </section>
+
+    <!-- Experience -->
+    <section>
+        <h2>Professional Experience</h2>
+        <div class="item">
+            <div class="item-header">
+                <div class="item-title">Data Annotator</div>
+                <div class="item-date">June 2025 – April 2026</div>
+            </div>
+            <div class="item-sub">Adept Talent Acquisition India Pvt Ltd</div>
+            <ul class="bullets">
+                <li>Executed high-precision data classification and quality annotation tasks according to rigorous project guidelines.</li>
+                <li>Maintained consistency, structural accuracy, and formatting compliance across client deliverables.</li>
+                <li>Applied systematic verification processes to handle high-volume data workflows under tight deadlines.</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Projects -->
+    <section>
+        <h2>Featured Projects</h2>
+
+        <div class="item">
+            <div class="item-header">
+                <div class="item-title">Malaria Detection System <span>| Python, Machine Learning</span></div>
+            </div>
+            <ul class="bullets">
+                <li>Built a Python-based diagnostic application to assist in identifying malaria parasites from cell images.</li>
+                <li>Applied image processing scripts and machine learning models to classify cell conditions automatically.</li>
+                <li>Automated cellular evaluation steps to reduce manual inspection time.</li>
+            </ul>
+        </div>
+
+        <div class="item">
+            <div class="item-header">
+                <div class="item-title">Online Home Appliances Management System <span>| Python, Django, SQL</span></div>
+            </div>
+            <ul class="bullets">
+                <li>Designed a full-stack database application to manage home appliance inventories and service records.</li>
+                <li>Structured relational SQLite models for product inventories, customer entries, and order processing.</li>
+                <li>Implemented clean server-side request routing, admin workflows, and form validation using Django.</li>
+            </ul>
+        </div>
+
+        <div class="item">
+            <div class="item-header">
+                <div class="item-title">Interactive Web Application Suite <span>| HTML5, CSS3, JavaScript</span></div>
+            </div>
+            <ul class="bullets">
+                <li><strong>Web Calculator:</strong> Created an interactive browser calculator implementing dynamic DOM manipulation and order of operations.</li>
+                <li><strong>E-Commerce Web Interface:</strong> Developed an interactive storefront interface with responsive layouts, cart behavior, and dynamic catalog views.</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Education -->
+    <section>
+        <h2>Education</h2>
+        <div class="edu-grid">
+            <div class="item">
+                <div class="item-title">Master of Computer Applications (MCA)</div>
+                <div class="item-date">Year of Passing: 2026</div>
+            </div>
+            <div class="item">
+                <div class="item-title">Bachelor of Commerce (B.Com)</div>
+                <div class="item-sub" style="color: #64748b; font-weight: normal;">Focus: Quantitative Methods &amp; Business Logic</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Learning -->
+    <section>
+        <h2>Currently Learning</h2>
+        <p style="font-size: 9pt; color: #475569;">
+            Advanced JavaScript, Django REST Framework, Machine Learning, and Deep Learning architectures.
+        </p>
+    </section>
+</div>
+
+</body>
+</html>

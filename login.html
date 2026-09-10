@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secure Auth Portal</title>
+    <link rel="stylesheet" href="register.css.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+</head>
+<body>
+    <div class="background-overlay"></div>
+
+    <main class="auth-wrapper">
+        <!-- Toast Notification Container -->
+        <div id="toast" class="toast hidden"></div>
+
+        <!-- Form Card Container -->
+        <div class="card-container" id="cardContainer">
+            
+            <!-- LOGIN VIEW -->
+            <section class="form-box" id="loginBox">
+                <h2>Welcome Back</h2>
+                <p class="subtitle">Enter your credentials to access your account</p>
+
+                <form id="loginForm" novalidate>
+                    <div class="input-group">
+                        <i class="fa-solid fa-user icon"></i>
+                        <input type="text" id="loginUsername" placeholder="Username" required autocomplete="username">
+                    </div>
+
+                    <div class="input-group">
+                        <i class="fa-solid fa-lock icon"></i>
+                        <input type="password" id="loginPassword" placeholder="Password" required autocomplete="current-password">
+                        <i class="fa-regular fa-eye-slash toggle-eye" onclick="toggleVisibility('loginPassword', this)"></i>
+                    </div>
+
+                    <div class="form-actions">
+                        <label class="remember-label">
+                            <input type="checkbox" id="rememberMe">
+                            <span>Remember me</span>
+                        </label>
+                        <a href="#" class="accent-link" onclick="triggerToast('Password reset link sent to registered email.', 'info')">Forgot password?</a>
+                    </div>
+
+                    <button type="submit" class="submit-btn">
+                        <span>Sign In</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+
+                    <p class="switch-prompt">
+                        Don't have an account? 
+                        <button type="button" class="link-btn" onclick="toggleForm('register')">Register here</button>
+                    </p>
+                </form>
+            </section>
+
+            <!-- REGISTRATION VIEW -->
+            <section class="form-box hidden" id="registerBox">
+                <h2>Create Account</h2>
+                <p class="subtitle">Join our secure user network in seconds</p>
+
+                <form id="registerForm" novalidate>
+                    <div class="input-group">
+                        <i class="fa-solid fa-user icon"></i>
+                        <input type="text" id="regUsername" placeholder="Choose a Username" required minlength="3">
+                    </div>
+
+                    <div class="input-group">
+                        <i class="fa-solid fa-envelope icon"></i>
+                        <input type="email" id="regEmail" placeholder="Email Address" required>
+                    </div>
+
+                    <div class="input-group">
+                        <i class="fa-solid fa-lock icon"></i>
+                        <input type="password" id="regPassword" placeholder="Password (min. 6 characters)" required minlength="6">
+                        <i class="fa-regular fa-eye-slash toggle-eye" onclick="toggleVisibility('regPassword', this)"></i>
+                    </div>
+
+                    <button type="submit" class="submit-btn register-btn">
+                        <span>Create Account</span>
+                        <i class="fa-solid fa-user-check"></i>
+                    </button>
+
+                    <p class="switch-prompt">
+                        Already have an account? 
+                        <button type="button" class="link-btn" onclick="toggleForm('login')">Sign In</button>
+                    </p>
+                </form>
+            </section>
+
+        </div>
+    </main>
+
+    <script src="auth.js"></script>
+</body>
+</html>

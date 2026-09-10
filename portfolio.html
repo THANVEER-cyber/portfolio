@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Shaik Thanveer - Backend Engineer & MCA Graduate specializing in Python, SQL, and Distributed Systems.">
+    <title>Shaik Thanveer | Backend Engineer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body data-theme="dark">
+
+    <div class="cursor-glow" id="cursorGlow"></div>
+
+    <!-- Header Navigation -->
+    <header class="header" id="header">
+        <a href="#home" class="logo">
+            </span>S_H_<span class="accent">A_I_K</span>
+        </a>
+
+        <nav class="nav" id="nav">
+            <a href="#home" class="nav-link active">Home</a>
+            <a href="#about" class="nav-link">About</a>
+            <a href="#skills" class="nav-link">Skills</a>
+            <a href="#experience" class="nav-link">Experience</a>
+            <a href="#projects" class="nav-link">Projects</a>
+            <a href="#contact" class="nav-link">Contact</a>
+        </nav>
+
+        <div class="header-actions">
+            <button id="themeToggle" class="icon-btn" aria-label="Toggle display theme" title="Toggle theme">
+                <span class="theme-icon">☀</span>
+            </button>
+            <button id="menuToggle" class="icon-btn menu-btn" aria-label="Toggle navigation menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero section" id="home">
+            <div class="hero-left">
+                <div class="status-badge">
+                    <span class="pulse-dot"></span> Available for Backend Roles
+                </div>
+                <h1 class="hero-title">
+                    Hi, I'm <span class="highlight">Shaik Thanveer</span>
+                </h1>
+                <h2 class="hero-subtitle">
+                    Python &amp; Backend Developer <span class="terminal-cursor">_</span>
+                </h2>
+                <p class="hero-desc">
+                    MCA Graduate engineering performant backend systems, resilient database schemas, and data pipelines. Focused on clean system design using Python, SQL, and modern web frameworks.
+                </p>
+
+                <div class="cta-row">
+                    <a href="#projects" class="btn btn-primary">Explore Engineering Work</a>
+                    <a href="resume.html" target="_blank" class="btn btn-outline">Resume &rarr;</a>
+                </div>
+
+                <div class="social-strip">
+                    <a href="https://github.com/THANVEER-cyber" target="_blank" aria-label="GitHub">
+                        <svg viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                    </a>
+                    <a href="https://www.linkedin.com/in/shaik-thanveer-639053241/" target="_blank" aria-label="LinkedIn">
+                        <svg viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                    </a>
+                    <a href="mailto:thannuthannu0141@gmail.com" aria-label="Email">
+                        <svg viewBox="0 0 24 24"><path d="M0 3v18h24v-18h-24zm21.518 2l-9.518 7.713-9.518-7.713h19.036zm-19.518 14v-11.817l9.518 7.687 9.518-7.687v11.817h-19.036z"/></svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Interactive Terminal Console -->
+            <div class="hero-right">
+                <div class="terminal-window">
+                    <div class="terminal-bar">
+                        <div class="terminal-dots">
+                            <span class="dot red"></span>
+                            <span class="dot yellow"></span>
+                            <span class="dot green"></span>
+                        </div>
+                        <span class="terminal-file">developer_instance.py</span>
+                    </div>
+                    <div class="terminal-body">
+<pre><code><span class="t-keyword">class</span> <span class="t-class">BackendEngineer</span>:
+    <span class="t-keyword">def</span> <span class="t-func">__init__</span>(self):
+        self.name = <span class="t-str">"Shaik Thanveer"</span>
+        self.degree = <span class="t-str">"MCA (Class of 2026)"</span>
+        self.core = [<span class="t-str">"Python"</span>, <span class="t-str">"SQL"</span>, <span class="t-str">"Flask"</span>, <span class="t-str">"Django"</span>]
+        self.status = <span class="t-str">"Ready to deploy"</span>
+
+    <span class="t-keyword">def</span> <span class="t-func">execute_pipeline</span>(self):
+        <span class="t-keyword">return</span> {
+            <span class="t-str">"clean_architecture"</span>: <span class="t-bool">True</span>,
+            <span class="t-str">"scalable_queries"</span>: <span class="t-bool">True</span>,
+            <span class="t-str">"data_integrity"</span>: <span class="t-bool">True</span>
+        }
+
+<span class="t-comment"># Ready to contribute</span>
+dev = <span class="t-class">BackendEngineer</span>()
+<span class="t-func">print</span>(dev.execute_pipeline())</code></pre>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section class="section" id="about">
+            <div class="section-header">
+                <span class="section-tag">PROFILE</span>
+                <h2>Architectural Focus &amp; Background</h2>
+            </div>
+
+            <div class="about-container">
+                <div class="about-text">
+                    <p>
+                        I hold an <strong>MCA degree</strong> built on an analytical background from my prior B.Com studies. This combination gives me a unique perspective on engineering: building software that solves genuine operational and business problems.
+                    </p>
+                    <p>
+                        My professional tenure at <strong>Adept Talent Acquisition</strong> as a Data Annotator solidified my discipline around raw data accuracy, pipeline hygiene, and pattern consistency—crucial instincts for building fault-tolerant backend services and machine learning models.
+                    </p>
+                </div>
+                <div class="metrics-grid">
+                    <div class="metric-card">
+                        <span class="metric-val">MCA</span>
+                        <span class="metric-label">2026 Post Graduate</span>
+                    </div>
+                    <div class="metric-card">
+                        <span class="metric-val">10+</span>
+                        <span class="metric-label">Months Data Annotation</span>
+                    </div>
+                    <div class="metric-card">
+                        <span class="metric-val">5+</span>
+                        <span class="metric-label">Backend Projects Built</span>
+                    </div>
+                    <div class="metric-card">
+                        <span class="metric-val">100%</span>
+                        <span class="metric-label">Production Mindset</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section with Dynamic Filter -->
+        <section class="section alternate" id="skills">
+            <div class="section-header">
+                <span class="section-tag">ARSENAL</span>
+                <h2>Technical Proficiencies</h2>
+            </div>
+
+            <div class="skill-filters">
+                <button class="filter-btn active" data-filter="all">All Tech</button>
+                <button class="filter-btn" data-filter="backend">Backend &amp; DB</button>
+                <button class="filter-btn" data-filter="frontend">Frontend</button>
+                <button class="filter-btn" data-filter="tools">Data &amp; Tools</button>
+            </div>
+
+            <div class="skills-catalog">
+                <div class="skill-tile" data-category="backend">
+                    <div class="skill-meta">
+                        <h4>Python</h4>
+                        <span class="skill-level">Advanced</span>
+                    </div>
+                    <p>Data structures, automation, OOP, microservices, and scripts.</p>
+                </div>
+
+                <div class="skill-tile" data-category="backend">
+                    <div class="skill-meta">
+                        <h4>SQL &amp; Relational DBs</h4>
+                        <span class="skill-level">Proficient</span>
+                    </div>
+                    <p>Schema design, index tuning, aggregate queries, normalization.</p>
+                </div>
+
+                <div class="skill-tile" data-category="backend">
+                    <div class="skill-meta">
+                        <h4>Flask &amp; Django</h4>
+                        <span class="skill-level">Proficient</span>
+                    </div>
+                    <p>REST APIs, JWT authentication, ORM integration, route orchestration.</p>
+                </div>
+
+                <div class="skill-tile" data-category="frontend">
+                    <div class="skill-meta">
+                        <h4>HTML5 &amp; CSS3</h4>
+                        <span class="skill-level">Advanced</span>
+                    </div>
+                    <p>Modern CSS Grid, Flexbox layouts, responsive design tokens.</p>
+                </div>
+
+                <div class="skill-tile" data-category="frontend">
+                    <div class="skill-meta">
+                        <h4>JavaScript (ES6+)</h4>
+                        <span class="skill-level">Intermediate</span>
+                    </div>
+                    <p>DOM pipelines, asynchronous fetch, API integration, client logic.</p>
+                </div>
+
+                <div class="skill-tile" data-category="tools">
+                    <div class="skill-meta">
+                        <h4>Git &amp; GitHub</h4>
+                        <span class="skill-level">Version Control</span>
+                    </div>
+                    <p>Branching workflows, code reviews, staging, repository hygiene.</p>
+                </div>
+
+                <div class="skill-tile" data-category="tools">
+                    <div class="skill-meta">
+                        <h4>Data Annotation</h4>
+                        <span class="skill-level">Industry Experience</span>
+                    </div>
+                    <p>Labeling pipelines, quality validation, ML dataset preprocessing.</p>
+                </div>
+
+                <div class="skill-tile" data-category="tools">
+                    <div class="skill-meta">
+                        <h4>Advanced Excel</h4>
+                        <span class="skill-level">Proficient</span>
+                    </div>
+                    <p>Data audit matrices, formula manipulation, metric aggregation.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <!-- ================= PROJECTS ================= -->
+<section class="section alternate" id="projects">
+    <div class="section-header">
+        <span class="section-tag">04 // PORTFOLIO</span>
+        <h2>Featured Engineering Projects</h2>
+    </div>
+
+    <div class="projects-container">
+
+        <!-- Flagship Project 1: Malaria Detection System -->
+    <article class="featured-project">
+        <div class="project-info">
+            <span class="badge">Deep Learning &bull; Computer Vision</span>
+            <h3>Enhancing Malaria Detection Through Deep Learning</h3>
+            <p>
+                An end-to-end diagnostic application powered by a custom Convolutional Neural Network (CNN) trained on NIH blood-smear datasets. Compares multiple deep learning architectures to classify infected vs. healthy erythrocytes with real-time inference and analytics dashboards.
+            </p>
+            <div class="tech-stack">
+                <span>Python</span>
+                <span>TensorFlow/Keras</span>
+                <span>Flask</span>
+                <span>SQLite</span>
+                <span>NumPy</span>
+            </div>
+            <div class="project-links" style="margin-top: 1.5rem; display: flex; gap: 0.75rem;">
+                <!-- Primary Repository Link -->
+                <a href="https://github.com/THANVEER-cyber/-Enhancing-malaria-detection-through-deep-learning" target="_blank" class="btn btn-primary" style="padding: 0.5rem 1.2rem; font-size: 0.85rem;">
+                    View Repository &rarr;
+                </a>
+                <!-- Direct Link to Main Code Pipeline -->
+                <a href="https://github.com/THANVEER-cyber/-Enhancing-malaria-detection-through-deep-learning/blob/main/app.py" target="_blank" class="btn btn-outline" style="padding: 0.5rem 1.2rem; font-size: 0.85rem;">
+                    View App Code
+                </a>
+            </div>
+        </div>
+    </article>
+
+        <!-- Flagship Project 2: Online Home Appliances Management System -->
+        <article class="featured-project">
+            <div class="project-info">
+                <span class="badge">Full-Stack &bull; Django &amp; SQL</span>
+                <h3>Online Home Appliances Management System</h3>
+                <p>
+                    A full-scale appliance inventory, service dispatch, and customer management system. Engineered relational SQLite/SQL database models to manage product stocks, user accounts, service requests, and transactional history with built-in validation pipelines.
+                </p>
+                <div class="tech-stack">
+                    <span>Python</span>
+                    <span>Django</span>
+                    <span>SQL</span>
+                    <span>SQLite</span>
+                    <span>HTML/CSS</span>
+                </div>
+                <div class="project-links" style="margin-top: 1.5rem; display: flex; gap: 1rem; flex-wrap: wrap;">
+                    <a href="https://github.com/THANVEER-cyber" target="_blank" class="btn btn-primary" style="padding: 0.5rem 1.2rem; font-size: 0.85rem;">
+                        View Project on GitHub &rarr;
+                    </a>
+                </div>
+            </div>
+        </article>
+
+        <!-- Flagship Project 3: Client Communication & Contact Pipeline -->
+        <!-- Flagship Project 3: Client Communication & Contact Pipeline -->
+<article class="featured-project">
+    <div class="project-info">
+        <span class="badge">Asynchronous Systems &bull; API Integration</span>
+        <h3>Interactive Client Dispatch &amp; Contact Pipeline</h3>
+        <p>
+            The asynchronous communication system running on this portfolio. Replaces server-side backend overhead with a client-side API bridge, featuring runtime field sanitization, responsive transmission statuses, and direct email forwarding with zero local database footprint.
+        </p>
+        <div class="tech-stack">
+            <span>JavaScript ES6+</span>
+            <span>Fetch API</span>
+            <span>Async/Await</span>
+            <span>Web3Forms API</span>
+        </div>
+        <div class="project-links" style="margin-top: 1.5rem; display: flex; gap: 1rem; flex-wrap: wrap;">
+            <a href="#contact" class="btn btn-primary" style="padding: 0.5rem 1.2rem; font-size: 0.85rem;">
+                Test Live on Page &darr;
+            </a>
+            <!-- Direct link to script.js file on GitHub -->
+        </div>
+    </div>
+</article>
+
+        <!-- Compact Projects Grid (5 Mini & Practical Projects) -->
+        <div class="compact-projects-grid">
+
+            <!-- Project 4: Register & Login System -->
+            <div class="compact-card">
+                <div>
+                    <div class="compact-header">
+                        <span class="card-icon">🔐</span>
+                        <span class="card-type">Web Application</span>
+                    </div>
+                    <h4>Register &amp; Login System</h4>
+                    <p>Client-side authentication engine with dynamic input validation, credential caching via browser localStorage, and interactive password visibility toggles.</p>
+                    <div class="tech-stack micro">
+                        <span>JavaScript</span>
+                        <span>localStorage</span>
+                        <span>HTML/CSS</span>
+                    </div>
+                </div>
+                <div style="margin-top: 1.25rem; display: flex; gap: 0.5rem;">
+                    <a href="auth.html" target="_blank" class="btn btn-outline" style="flex: 1; padding: 0.5rem; font-size: 0.82rem; text-align: center;">
+                        Live Demo &rarr;
+                    </a>
+                    <a href="https://github.com/THANVEER-cyber/register-login/blob/main/index.html" target="_blank" class="btn btn-outline" style="flex: 1; padding: 0.5rem; font-size: 0.82rem; text-align: center;">
+                        Code
+                    </a>
+                </div>
+            </div>
+
+            <!-- Project 5: Student Registration Form -->
+            <div class="compact-card">
+                <div>
+                    <div class="compact-header">
+                        <span class="card-icon">📝</span>
+                        <span class="card-type">Form Platform</span>
+                    </div>
+                    <h4>Student Registration Portal</h4>
+                    <p>Responsive intake portal capturing and validating student details (courses, email, IDs) with structured local caching, structured for modular REST API integration.</p>
+                    <div class="tech-stack micro">
+                        <span>JavaScript</span>
+                        <span>Validation</span>
+                        <span>CSS Grid</span>
+                    </div>
+                </div>
+                <div style="margin-top: 1.25rem; display: flex; gap: 0.5rem;">
+                    <a href="student-Form.html" target="_blank" class="btn btn-outline" style="flex: 1; padding: 0.5rem; font-size: 0.82rem; text-align: center;">
+                        Live Demo &rarr;
+                    </a>
+                    <a href="https://github.com/THANVEER-cyber/student-registration-form/blob/main/index.html" target="_blank" class="btn btn-outline" style="flex: 1; padding: 0.5rem; font-size: 0.82rem; text-align: center;">
+                        Code
+                    </a>
+                </div>
+            </div>
+
+            <!-- Project 7: Interactive BMI Calculator -->
+            <div class="compact-card">
+                <div>
+                    <div class="compact-header">
+                        <span class="card-icon">⚖</span>
+                        <span class="card-type">Health Tool</span>
+                    </div>
+                    <h4>Interactive BMI Calculator</h4>
+                    <p>Real-time client utility calculating Body Mass Index from height (cm) and weight (kg) inputs with instant categorization updates in the DOM.</p>
+                    <div class="tech-stack micro">
+                        <span>JavaScript</span>
+                        <span>DOM Scripting</span>
+                        <span>CSS3</span>
+                    </div>
+                </div>
+                <div style="margin-top: 1.25rem; display: flex; gap: 0.5rem;">
+                    <a href="BMI calculator.html" target="_blank" class="btn btn-outline" style="flex: 1; padding: 0.5rem; font-size: 0.82rem; text-align: center;">
+                        Live Demo &rarr;
+                    </a>
+                    <a href="https://github.com/THANVEER-cyber/interactive-BMI-Calculator/blob/main/index.html" target="_blank" class="btn btn-outline" style="flex: 1; padding: 0.5rem; font-size: 0.82rem; text-align: center;">
+                        Code
+                    </a>
+                </div>
+            </div>
+<!-- Project: Secure Auth Dashboard -->
+<div class="compact-card">
+    <div>
+        <div class="compact-header">
+            <span class="card-icon">🔐</span>
+            <span class="card-type">Web Application</span>
+        </div>
+        <h4>User Authentication & Dashboard Portal</h4>
+        <p>Responsive single-page authentication system featuring dynamic registration and login state transitions, persistent session handling via HTML5 LocalStorage, and a protected dashboard.</p>
+        <div class="tech-stack micro">
+            <span>JavaScript (ES6+)</span>
+            <span>LocalStorage</span>
+            <span>CSS Glassmorphism</span>
+        </div>
+    </div>
+    <div style="margin-top: 1.25rem; display: flex; gap: 0.5rem;">
+        <a href="login.html" target="_blank" class="btn btn-outline" style="flex: 1; padding: 0.5rem; font-size: 0.82rem; text-align: center;">
+            Live Demo &rarr;
+        </a>
+        <a href="https://github.com/THANVEER-cyber/secure-auth-dashboard/blob/main/index.html" target="_blank" class="btn btn-outline" style="flex: 1; padding: 0.5rem; font-size: 0.82rem; text-align: center;">
+            Code
+        </a>
+    </div>
+</div>
+
+            <!-- Project 8: Responsive Web Calculator -->
+            <div class="compact-card">
+                <div>
+                    <div class="compact-header">
+                        <span class="card-icon">&lt;/&gt;</span>
+                        <span class="card-type">Web Tool</span>
+                    </div>
+                    <h4>Responsive Web Calculator</h4>
+                    <p>Event-driven browser calculator handling complex arithmetic sequences, chained operations, decimal states, and dynamic display caching.</p>
+                    <div class="tech-stack micro">
+                        <span>HTML5</span>
+                        <span>CSS Flexbox</span>
+                        <span>JavaScript ES6</span>
+                    </div>
+                </div>
+                <div style="margin-top: 1.25rem; display: flex; gap: 0.5rem;">
+                    <!-- Opens the running web app -->
+                    <a href="web calculator.html" target="_blank" class="btn btn-outline" style="flex: 1; padding: 0.5rem; font-size: 0.82rem; text-align: center;">
+                        Live Demo &rarr;
+                    </a>
+                    <!-- Opens the updated index.html code file on GitHub -->
+                    <a href="https://github.com/THANVEER-cyber/Web-calculator-/blob/main/index.html" target="_blank" class="btn btn-outline" style="flex: 1; padding: 0.5rem; font-size: 0.82rem; text-align: center;">
+                        Code
+                    </a>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+        <!-- Contact Section -->
+    <section class="section" id="contact">
+        <div class="section-header">
+            <span class="section-tag">DISPATCH</span>
+            <h2>Initiate Connection</h2>
+        </div>
+
+        <div class="contact-shell">
+            <div class="contact-info">
+            <p class="contact-lead">
+                I am actively considering backend engineering positions, developer apprenticeships, and data-centric software initiatives.
+            </p>
+
+            <div class="contact-methods">
+                <a href="mail:thannuthannu0141@gmail.com" class="method-card">
+                    <span class="method-type">Email</span>
+                    <span class="method-value">thannuthannu0141@gmail.com</span>
+                </a>
+                <a href="tel:+918074885400" class="method-card">
+                    <span class="method-type">Direct Phone</span>
+                    <span class="method-value">+91 80748 85400</span>
+                </a>
+                <div class="method-card">
+                    <span class="method-type">Location Base</span>
+                    <span class="method-value">India (Available for Remote / Relocation)</span>
+                    <span class="method-type">Prefernce</span>
+                    <p>1.Bengaluru</p>
+                    <p>2.Hyderabad</p>
+                    <p>3.Chennai</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="contact-form-wrap">
+            <form id="contactForm" class="contact-form">
+                <!-- Web3Forms Key Activated -->
+                <input type="hidden" name="access_key" value="7489f43f-dba3-42de-9bdd-ecac5736c06b">
+                <input type="hidden" name="from_name" value="Portfolio Inquirer">
+                
+                <div class="input-group">
+                    <label for="name">Your Name</label>
+                    <input type="text" id="name" name="name" placeholder="Name - please" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="email">Your Email Address</label>
+                    <input type="email" id="email" name="email" placeholder="Mail - please" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="message">Project Scope or Message</label>
+                    <textarea id="message" name="message" rows="5" placeholder="Share parameters regarding your opening or project..." required></textarea>
+                </div>
+
+                <button type="submit" id="submitBtn" class="btn btn-primary submit-btn">
+                    <span>Transmit Message</span>
+                </button>
+                <div id="formFeedback" class="form-feedback" aria-live="polite"></div>
+            </form>
+            </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2026 Shaik Thanveer &bull; Engineered with HTML5, Custom CSS, and Modern JavaScript</p>
+        <a href="#home" class="back-to-top">Return to Terminal Top &uarr;</a>
+    </footer>
+
+    <script src="Script.js"></script>
+</body>
+</html>

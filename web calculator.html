@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modern Glassmorphism Calculator</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      user-select: none;
+    }
+
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background: radial-gradient(circle at 20% 20%, #4338ca 0%, transparent 40%),
+                  radial-gradient(circle at 80% 80%, #06b6d4 0%, transparent 40%),
+                  radial-gradient(circle at 50% 50%, #1e1b4b 0%, #09090b 100%);
+      background-color: #09090b;
+      padding: 20px;
+    }
+
+    /* Subtle background ambient blur layer */
+    .calculator-container {
+      width: 100%;
+      max-width: 340px;
+      background: rgba(255, 255, 255, 0.04);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      padding: 24px;
+      border-radius: 28px;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5),
+                  inset 0 1px 1px 0 rgba(255, 255, 255, 0.2);
+    }
+
+    .display-screen {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      align-items: flex-end;
+      min-height: 90px;
+      padding: 16px 12px;
+      margin-bottom: 20px;
+      background: rgba(0, 0, 0, 0.25);
+      border-radius: 16px;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      word-break: break-all;
+    }
+
+    .history {
+      font-size: 0.875rem;
+      color: #94a3b8;
+      min-height: 1.25rem;
+    }
+
+    .current {
+      font-size: 2.25rem;
+      font-weight: 500;
+      color: #f8fafc;
+      line-height: 1.2;
+    }
+
+    .buttons {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+    }
+
+    .btn {
+      font-size: 1.15rem;
+      font-weight: 500;
+      padding: 16px;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      border-radius: 14px;
+      color: #f1f5f9;
+      background: rgba(255, 255, 255, 0.05);
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: background 0.15s ease, transform 0.1s ease, border-color 0.15s ease;
+    }
+
+    .btn:hover {
+      background: rgba(255, 255, 255, 0.12);
+      border-color: rgba(255, 255, 255, 0.2);
+    }
+
+    .btn:active {
+      transform: scale(0.96);
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    /* Operator & functional button accents */
+    .btn.utility {
+      color: #f87171;
+      background: rgba(239, 68, 68, 0.1);
+      border-color: rgba(239, 68, 68, 0.2);
+    }
+
+    .btn.utility:hover {
+      background: rgba(239, 68, 68, 0.2);
+      border-color: rgba(239, 68, 68, 0.4);
+    }
+
+    .btn.operator {
+      color: #38bdf8;
+      background: rgba(56, 189, 248, 0.08);
+      border-color: rgba(56, 189, 248, 0.2);
+    }
+
+    .btn.operator:hover {
+      background: rgba(56, 189, 248, 0.2);
+      border-color: rgba(56, 189, 248, 0.4);
+    }
+
+    .btn.equals {
+      background: linear-gradient(135deg, #6366f1, #3b82f6);
+      color: #ffffff;
+      border: none;
+      box-shadow: 0 4px 14px rgba(99, 102, 241, 0.4);
+    }
+
+    .btn.equals:hover {
+      background: linear-gradient(135deg, #4f46e5, #2563eb);
+      box-shadow: 0 6px 18px rgba(99, 102, 241, 0.6);
+    }
+
+    .btn.span-two {
+      grid-column: span 2;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="calculator-container">
+    <div class="display-screen">
+      <div class="history" id="history"></div>
+      <div class="current" id="display">0</div>
+    </div>
+    
+    <div class="buttons">
+      <!-- Row 1 -->
+      <button class="btn utility" data-action="clear">AC</button>
+      <button class="btn utility" data-action="delete">⌫</button>
+      <button class="btn operator" data-value="%">%</button>
+      <button class="btn operator" data-value="/">÷</button>
+      
+      <!-- Row 2 -->
+      <button class="btn" data-value="7">7</button>
+      <button class="btn" data-value="8">8</button>
+      <button class="btn" data-value="9">9</button>
+      <button class="btn operator" data-value="*">×</button>
+      
+      <!-- Row 3 -->
+      <button class="btn" data-value="4">4</button>
+      <button class="btn" data-value="5">5</button>
+      <button class="btn" data-value="6">6</button>
+      <button class="btn operator" data-value="-">−</button>
+      
+      <!-- Row 4 -->
+      <button class="btn" data-value="1">1</button>
+      <button class="btn" data-value="2">2</button>
+      <button class="btn" data-value="3">3</button>
+      <button class="btn operator" data-value="+">+</button>
+      
+      <!-- Row 5 -->
+      <button class="btn span-two" data-value="0">0</button>
+      <button class="btn" data-value=".">.</button>
+      <button class="btn equals" data-action="calculate">=</button>
+    </div>
+  </div>
+
+  <script>
+    const display = document.getElementById("display");
+    const history = document.getElementById("history");
+    const buttons = document.querySelectorAll(".btn");
+
+    let currentInput = "0";
+    let expression = "";
+    let isFinished = false;
+
+    const updateDisplay = () => {
+      display.textContent = currentInput;
+      history.textContent = expression;
+    };
+
+    const handleInput = (val) => {
+      const isOperator = ["+", "-", "*", "/", "%"].includes(val);
+
+      if (isFinished && !isOperator && val !== ".") {
+        currentInput = val;
+        expression = "";
+        isFinished = false;
+        updateDisplay();
+        return;
+      }
+      isFinished = false;
+
+      if (isOperator) {
+        if (["+", "-", "*", "/", "%"].includes(currentInput.slice(-1))) {
+          currentInput = currentInput.slice(0, -1) + val;
+        } else {
+          currentInput += val;
+        }
+      } else if (val === ".") {
+        const parts = currentInput.split(/[\+\-\*\/\%]/);
+        const lastPart = parts[parts.length - 1];
+        if (!lastPart.includes(".")) {
+          currentInput += ".";
+        }
+      } else {
+        if (currentInput === "0") {
+          currentInput = val;
+        } else {
+          currentInput += val;
+        }
+      }
+      updateDisplay();
+    };
+
+    const calculateResult = () => {
+      try {
+        expression = currentInput;
+        // Clean trailing operators before parsing
+        let sanitized = currentInput.replace(/[\+\-\*\/\%]+$/, "");
+        
+        // Handle percentage calculation
+        sanitized = sanitized.replace(/(\d+(\.\d+)?)%/g, "($1/100)");
+
+        // Safe evaluation without raw eval()
+        const result = Function(`'use strict'; return (${sanitized})`)();
+        
+        if (!isFinite(result) || isNaN(result)) {
+          currentInput = "Error";
+        } else {
+          // Cap long decimals
+          currentInput = String(Math.round(result * 100000000) / 100000000);
+        }
+        isFinished = true;
+      } catch {
+        currentInput = "Error";
+      }
+      updateDisplay();
+    };
+
+    const clearAll = () => {
+      currentInput = "0";
+      expression = "";
+      updateDisplay();
+    };
+
+    const deleteLast = () => {
+      if (currentInput.length === 1 || currentInput === "Error") {
+        currentInput = "0";
+      } else {
+        currentInput = currentInput.slice(0, -1);
+      }
+      updateDisplay();
+    };
+
+    // Button click handling
+    buttons.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const value = btn.getAttribute("data-value");
+        const action = btn.getAttribute("data-action");
+
+        if (action === "clear") clearAll();
+        else if (action === "delete") deleteLast();
+        else if (action === "calculate") calculateResult();
+        else if (value) handleInput(value);
+      });
+    });
+
+    // Keyboard support
+    window.addEventListener("keydown", (e) => {
+      if ((e.key >= "0" && e.key <= "9") || ["+", "-", "*", "/", ".", "%"].includes(e.key)) {
+        handleInput(e.key);
+      } else if (e.key === "Enter" || e.key === "=") {
+        e.preventDefault();
+        calculateResult();
+      } else if (e.key === "Backspace") {
+        deleteLast();
+      } else if (e.key === "Escape") {
+        clearAll();
+      }
+    });
+  </script>
+</body>
+</html>
